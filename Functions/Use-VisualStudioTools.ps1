@@ -4,8 +4,7 @@
 
   .PARAMETER version
   The version of Visual Studio Command Line Tools to reference. Defaults to 2015.
-#>
-Function Use-VisualStudioTools
+#>Function Use-VisualStudioTools
 (
   [string] $version = "2015")
 {
