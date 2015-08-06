@@ -1,4 +1,4 @@
-<#
+﻿<#
   .SYNOPSIS
   Makes the current shell a Visual Studio Command Prompt
 
