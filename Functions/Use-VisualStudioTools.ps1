@@ -5,7 +5,9 @@
   .PARAMETER version
   The version of Visual Studio Command Line Tools to reference. Defaults to 2015.
 #>
-﻿function Use-VisualStudioTools($version = "2015")
+﻿function Use-VisualStudioTools
+(
+  [string] $version = "2015")
 {
     switch ($version)
     {
