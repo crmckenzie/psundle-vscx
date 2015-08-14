@@ -32,7 +32,12 @@ Function Use-VisualStudioTools
   write-host "Loading $variableName from $vsfullpath"
 
 	pushd $vspath
-	cmd /c $vsfullpath + "&set" |
+  # cmd should like like this:
+  # cmd /c """C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\vsvars32.bat""&set"
+	$cmd = "cmd /c """"""$vsfullpath""""&set"""
+  write-verbose $cmd
+  $stdout = Invoke-expression $cmd
+  $stdout |
 	foreach {
 	  if ($_ -match "=") {
 		$v = $_.split("=");
